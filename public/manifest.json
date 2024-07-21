@@ -1,0 +1,35 @@
+{
+  "version": "0.0.1",
+  "version_name": "power by Vue",
+  "short_name": "One New Tab Vue",
+  "description": "__MSG_Description__",
+  "name": "One New Tab",
+  "manifest_version": 3,
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "permissions": [
+    "offscreen",
+    "bookmarks",
+    "downloads",
+    "storage",
+    "cookies",
+    "alarms",
+    "tabs"
+  ],
+  "icons": {
+    "16": "favicon/icon16.png",
+    "32": "favicon/icon32.png",
+    "48": "favicon/icon48.png",
+    "128": "favicon/icon128.png"
+  },
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000"
+}
