@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="zh">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="manifest" href="/manifest.json">
   <meta name="viewport"
     content="width=device-width,minimal-ui,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-touch-fullscreen" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" >
-  <link rel="apple-touch-icon" href="favicon.ico">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-  <meta name="theme-color" content="rgba(0, 0, 0, 0)">
+
+  <link rel="apple-touch-icon" href="favicon/icon128.png">
+
+
+
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
   <title>
     <%= htmlWebpackPlugin.options.title %>
@@ -28,3 +31,9 @@
 </body>
 
 </html>
+
+<style>
+  html {
+        background-color:#000;
+  }
+</style>

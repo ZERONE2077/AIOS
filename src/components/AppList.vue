@@ -1,9 +1,9 @@
 <template>
   <div id="apps">
-    <a v-for="item in filteredApps" :key="item.id" :href="item.link" class="app-item" target="_blank">
-      <img :src="getAppLogo(item.id)" :alt="item.name" class="app-logo" @error="handleImageError" />
+    <div v-for="item in filteredApps" :key="item.id" class="app-item" @click="openLink(item.link)">
+      <img :src="getAppLogo(item.id)" :alt="item.name" class="app-logo" @error="handleImageError">
       <span class="app-name">{{ item.name }}</span>
-    </a>
+    </div>
   </div>
 </template>
 
@@ -41,11 +41,15 @@ export default {
     },
     getAppLogo(id) {
       // 动态生成图标路径
-      return `/theme/smartisan/${id}.png`;
+      return `assets/theme/smartisan/${id}.png`;
     },
     handleImageError(event) {
       // 当图片加载失败时使用默认图标
-      event.target.src = '/theme/smartisan/default.png';
+      event.target.src = 'assets/theme/smartisan/default.png';
+    },
+    openLink(url) {
+      // 使用 JavaScript 打开链接
+      window.open(url, '_blank');
     }
   }
 };
@@ -56,7 +60,9 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  padding: 20px;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
 }
 
 .app-item {
@@ -67,17 +73,18 @@ export default {
   color: inherit;
   border-radius: 8px;
   flex-direction: column;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.2s ease-in-out;
 }
 
 .app-item:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .app-logo {
   height: 48px;
   width: 48px;
 }
-
 
 .app-name {
   height: 16px;

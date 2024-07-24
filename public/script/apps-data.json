@@ -1,7 +1,7 @@
 [
   {
     "name": "抖音",
-    "link": "https://www.douyin.com/",
+    "link": "https://www.douyin.com/?recommend=1",
     "id": "douyin",
     "shortkey": "dy",
     "status": true
