@@ -1,0 +1,31 @@
+{
+  "version": "0.0.1",
+  "version_name": "0.0.1",
+  "short_name": "One New Tab Vue",
+  "description": "__MSG_Description__",
+  "name": "One New Tab",
+  "manifest_version": 3,
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "permissions": [
+    "offscreen",
+    "bookmarks",
+    "downloads",
+    "storage",
+    "cookies",
+    "alarms",
+    "tabs"
+  ],
+  "icons": {
+
+    "128": "favicon/icon128.png"
+  }
+  
+}

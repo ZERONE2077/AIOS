@@ -1,0 +1,208 @@
+[
+  {
+    "name": "抖音",
+    "link": "https://www.douyin.com/?recommend=1",
+    "id": "douyin",
+    "shortkey": "dy",
+    "status": true
+  },
+  {
+    "name": "淘宝",
+    "link": "https://www.taobao.com/",
+    "id": "taobao",
+    "shortkey": "tb",
+    "status": true
+  },
+  {
+    "name": "微信",
+    "link": "https://weixin.qq.com/",
+    "id": "weixin",
+    "shortkey": "wx",
+    "status": false
+  },
+  {
+    "name": "今日头条",
+    "link": "https://www.toutiao.com/",
+    "id": "toutiao",
+    "shortkey": "tj",
+    "status": true
+  },
+  {
+    "name": "腾讯视频",
+    "link": "https://v.qq.com/",
+    "id": "qqvideo",
+    "shortkey": "txsp",
+    "status": true
+  },
+  {
+    "name": "爱奇艺",
+    "link": "https://www.iqiyi.com/",
+    "id": "aiqiyi",
+    "shortkey": "aqy",
+    "status": true
+  },
+  {
+    "name": "京东",
+    "link": "https://www.jd.com/",
+    "id": "jd",
+    "shortkey": "jd",
+    "status": true
+  },
+  {
+    "name": "微博",
+    "link": "https://weibo.com/",
+    "id": "weibo",
+    "shortkey": "wb",
+    "status": true
+  },
+  {
+    "name": "拼多多",
+    "link": "https://www.pinduoduo.com/",
+    "id": "pinduoduo",
+    "shortkey": "pdd",
+    "status": false
+  },
+  {
+    "name": "百度",
+    "link": "https://www.baidu.com/",
+    "id": "baidu",
+    "shortkey": "bd",
+    "status": false
+  },
+  {
+    "name": "优酷",
+    "link": "https://youku.com/",
+    "id": "youku",
+    "shortkey": "yk",
+    "status": true
+  },
+  {
+    "name": "美团",
+    "link": "https://www.meituan.com/",
+    "id": "meituan",
+    "shortkey": "mt",
+    "status": true
+  },
+  {
+    "name": "饿了么",
+    "link": "https://www.ele.me/",
+    "id": "eleme",
+    "shortkey": "elm",
+    "status": false
+  },
+  {
+    "name": "哔哩哔哩",
+    "link": "https://www.bilibili.com/",
+    "id": "bilibili",
+    "shortkey": "bl",
+    "status": true
+  },
+  {
+    "name": "知乎",
+    "link": "https://www.zhihu.com/",
+    "id": "zhihu",
+    "shortkey": "zh",
+    "status": true
+  },
+  {
+    "name": "小红书",
+    "link": "https://www.xiaohongshu.com/",
+    "id": "xiaohongshu",
+    "shortkey": "xhs",
+    "status": true
+  },
+  {
+    "name": "网易云",
+    "link": "https://music.163.com/",
+    "id": "netmusic",
+    "shortkey": "wyy",
+    "status": true
+  },
+  {
+    "name": "高德地图",
+    "link": "https://www.amap.com/",
+    "id": "amap",
+    "shortkey": "gdm",
+    "status": true
+  },
+  {
+    "name": "斗鱼",
+    "link": "https://www.douyu.com/",
+    "id": "douyu",
+    "shortkey": "dy",
+    "status": true
+  },
+  {
+    "name": "虎牙",
+    "link": "https://www.huya.com/",
+    "id": "huya",
+    "shortkey": "hy",
+    "status": true
+  },
+  {
+    "name": "快看漫画",
+    "link": "https://www.kuaikanmanhua.com/",
+    "id": "kuaikan",
+    "shortkey": "kkmh",
+    "status": true
+  },
+  {
+    "name": "QQ 音乐",
+    "link": "https://y.qq.com/",
+    "id": "qqmusic",
+    "shortkey": "qqyy",
+    "status": true
+  },
+  {
+    "name": "Taptap",
+    "link": "https://www.taptap.com/",
+    "id": "taptap",
+    "shortkey": "",
+    "status": true
+  },
+  {
+    "name": "少数派",
+    "link": "https://sspai.com/",
+    "id": "sspai",
+    "shortkey": "ssp",
+    "status": true
+  },
+  {
+    "name": "天猫",
+    "link": "https://www.tmall.com/",
+    "id": "tmall",
+    "shortkey": "tm",
+    "status": true
+  },
+  {
+    "name": "小黑盒",
+    "link": "https://xiaoheihe.cn/",
+    "id": "xiaoheihe",
+    "shortkey": "xhh",
+    "status": false
+  }
+  ,
+  {
+    "name": "OP.GG",
+    "link": "https://www.op.gg/modes/arena",
+    "id": "opgg",
+    "shortkey": "op",
+    "status": true
+  }
+  ,
+  {
+    "name": "Figma",
+    "link": "https://www.figma.com/files",
+    "id": "figma",
+    "shortkey": "fg",
+    "status": true
+  }
+  ,
+  {
+    "name": "ChatGPT",
+    "link": "https://chatgpt.com/",
+    "id": "chatgpt",
+    "shortkey": "cg",
+    "status": true
+  }
+]
