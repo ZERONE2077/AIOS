@@ -12,6 +12,5 @@
   </script>
   
   <style scoped>
-  /* 你可以在这里添加样式 */
   </style>
   

@@ -1,16 +1,21 @@
 <template>
   <div class="search-wrap">
-    <div class="search-box">
+    <div class="search-box bg-blur">
       <div class="search-bar">
-        <input v-model="query" type="text" placeholder="Search..." @input="debouncedFetchSuggestions"
-          @keyup.enter="performSearch">
-        <button @click="performSearch">
-          Search
-        </button>
+        <input
+          v-model="query"
+          type="text"
+          placeholder="Search..."
+          @input="debouncedFetchSuggestions"
+          @keyup.enter="performSearch"
+          @focus="showSuggestions = true"
+          @blur="handleBlur"
+        />
+        <button @click="performSearch">Search</button>
       </div>
 
-      <ul v-if="suggestions.length" class="suggestions-list">
-        <li v-for="suggestion in suggestions" :key="suggestion" @click="handleSuggestionClick(suggestion)">
+      <ul v-if="showSuggestions && suggestions.length" class="suggestions-list">
+        <li v-for="suggestion in suggestions" :key="suggestion" @mousedown="handleSuggestionClick(suggestion)">
           {{ suggestion }}
         </li>
       </ul>
@@ -26,13 +31,20 @@ export default {
   setup() {
     const query = ref('');
     const suggestions = ref([]);
+    const showSuggestions = ref(false);
+    
+    // 默认搜索引擎
+    const searchEngineUrl = 'https://www.bing.com/search?q=';
+
+    const getSearchUrl = (query) => {
+      return `${searchEngineUrl}${encodeURIComponent(query)}`;
+    };
 
     const performSearch = () => {
       const trimmedQuery = query.value.trim();
       if (trimmedQuery) {
-        const encodedQuery = encodeURIComponent(trimmedQuery);
-        const searchUrl = `https://www.bing.com/search?q=${encodedQuery}`;
-        window.open(searchUrl, '_blank'); // 打开搜索结果的新标签页
+        const searchUrl = getSearchUrl(trimmedQuery);
+        window.open(searchUrl, '_blank');
       } else {
         alert('请输入搜索内容');
       }
@@ -64,13 +76,17 @@ export default {
     const debouncedFetchSuggestions = debounce(fetchSuggestions, 300);
 
     const handleSuggestionClick = (suggestion) => {
-      query.value = suggestion; // 设定选中的建议为输入框的值
-      suggestions.value = []; // 清空建议列表
-      performSearch(); // 执行搜索
+      query.value = suggestion;
+      performSearch();
+    };
+
+    const handleBlur = () => {
+      setTimeout(() => {
+        showSuggestions.value = false;
+      }, 200);
     };
 
     onBeforeUnmount(() => {
-      // 清理挂载的脚本以防止内存泄漏
       const scripts = document.querySelectorAll('script[src^="https://suggestion.baidu.com/su"]');
       scripts.forEach(script => {
         document.body.removeChild(script);
@@ -80,51 +96,49 @@ export default {
     return {
       query,
       suggestions,
+      showSuggestions,
       performSearch,
       debouncedFetchSuggestions,
-      handleSuggestionClick
+      handleSuggestionClick,
+      handleBlur
     };
   }
 };
 </script>
 
 <style scoped>
-* {}
-
 .search-wrap {
+  z-index: 1000;
+
 }
 
 .search-box {
-  background: white;
-  padding: 2px;
+  margin: auto;
   border-radius: 8px;
   max-width: 520px;
+  padding: 2px;
+  position: relative;
 }
 
 .search-bar {
   display: flex;
 }
 
-
-
 .search-box input {
   width: 100%;
   background: transparent;
 }
 
-
-
-
-
 .suggestions-list {
-  font-size: 12px;
-
-  list-style: none;
-  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
   margin: 0;
-  width: 100%;
-  z-index: 1000;
-  /* Ensure it appears on top of other elements */
+  padding: 0;
+  list-style: none;
+  background: white;
+  border: 1px solid #ccc;
 }
 
 .suggestions-list li {

@@ -1,13 +1,17 @@
 <template>
   <div id="desktop">
-    <NavBar />
-    <WallPaper />
     <div id="main">
       <WidgetClock />
       <WidgetSearch />
+      <MusicPlayer />
       <AppList />
+      <SettingsPage />
     </div>
+
+
   </div>
+  <NavBar />
+  <WallPaper />
 </template>
 
 <script>
@@ -16,6 +20,8 @@ import AppList from './components/AppList.vue';
 import WidgetClock from './components/Widget/ClockWrap.vue';
 import WidgetSearch from './components/Widget/SearchWrap.vue';
 import NavBar from './components/NavBar.vue';
+import MusicPlayer from './components/Widget/MusicPlayer.vue';
+import SettingsPage from './components/SettingsPage.vue'
 
 export default {
   name: 'App',
@@ -25,26 +31,23 @@ export default {
     WidgetSearch,
     AppList,
     NavBar,
+    MusicPlayer,
+    SettingsPage,
   }
 };
 </script>
 
 <style scoped>
-#app {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
 #desktop {
-  
+
+  margin: auto;
 }
 
 #main {
   display: grid;
-  margin: 80px auto ;
+  margin: 60px auto;
   padding: 20px;
+  gap: 20px;
   max-width: 1080px;
-  height: 100%;
 }
 </style>
